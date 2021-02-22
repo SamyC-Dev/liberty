@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
-const { isEmail } = require('validator');
 
 const userSchema = new mongoose.Schema({
     pseudo: {
@@ -14,7 +13,6 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        validate: [isEmail],
         lowercase: true,
         unique: true,
         trim: true,
@@ -29,6 +27,7 @@ const userSchema = new mongoose.Schema({
     expireToken: Date,
     bio: {
         type: String,
+        default: "No Bio",
         max: 1024,
     },
     pic: {
