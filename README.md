@@ -12,18 +12,16 @@ Liberty est un projet MERN (Mongo Express React Node).
 - react ( hooks, context)
 - redux
 - react router / react router dom
-
+- Local Storage
 ### Back
 - node
 - express
 - mongoose
+- bcrypt
+- email-validator
 
 ### Base De Donnée
 - mongoDB
-
-## Outils:
-
-- Local Storage
 
 ## Wireframe:
 
