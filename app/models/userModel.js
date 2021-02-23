@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "No Bio",
         max: 1024,
+        trim: true
     },
     pic: {
         type: String,
@@ -37,7 +38,7 @@ const userSchema = new mongoose.Schema({
     following: [{ type: ObjectId, ref: "User" }]
 },
     {
-        timestamps: true,
+        timestamps: true
     }
 );
 

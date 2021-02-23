@@ -5,11 +5,13 @@ const postSchema = new mongoose.Schema({
 
     title: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     message: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
     },
     photo: {
         type: String,
@@ -24,6 +26,10 @@ const postSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "User"
     }
-}, { timestamps: true });
+},
+    {
+        timestamps: true
+    }
+);
 
 mongoose.model("Post", postSchema);
