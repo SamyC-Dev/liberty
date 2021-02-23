@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const User = mongoose.model("User")
+const User = mongoose.model("User");
 
 // une libraire pour tester le format des email
 const emailValidator = require('email-validator');
 
 // bcrypt, pour HASHER les mots de passer
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const authController = {
 
@@ -33,7 +33,7 @@ const authController = {
                 if (userFind) {
                     return res.status(422).json({ error: "Email déjà utilisée !" })
                 }
-                bcrypt.hash(password, 10)
+                bcrypt.hash(password, 12)
                     .then(passwordHashed => {
                         const user = new User({
                             email,
@@ -51,7 +51,7 @@ const authController = {
                                 //     subject:"signup success",
                                 //     html:"<h1>welcome to instagram</h1>"
                                 // })
-                                res.json({ message: "saved successfully" })
+                                res.json({ message: "Inscription avec succés" })
                             })
                             .catch(err => {
                                 return res.status(422).json({ error: "Ce pseudo est déjà utilisé !" })
@@ -59,12 +59,37 @@ const authController = {
                     })
             })
             .catch(err => {
-                console.log('err ici2')
+                console.log(err)
             })
     },
 
+    signinAction: (req, res) => {
 
-    // loginAction: async (req, res) => {},
+        const { email, password } = req.body
+        if (!email || !password) {
+            return res.status(422).json({ error: "Veuiller remplir email et password Merci" })
+        }
+        User.findOne({ email: email })
+            .then(userFind => {
+                if (!userFind) {
+                    return res.status(422).json({ error: "email ou password incorrect" })
+                }
+                bcrypt.compare(password, userFind.password)
+                    .then(passwordMatch => {
+                        if (passwordMatch) {
+                            res.json({ message: "successfully signed in" })
+
+                        }
+                        else {
+                            return res.status(422).json({ error: "Ce compte n'exite pas !" })
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            })
+    },
+
     // logout: (req, res) => {}
 };
 
