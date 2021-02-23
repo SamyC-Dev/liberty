@@ -7,6 +7,10 @@ const emailValidator = require('email-validator');
 // bcrypt, pour HASHER les mots de passer
 const bcrypt = require('bcryptjs');
 
+// jsonwebtoken, creer et verifier le token
+const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = require('../../config/keys');
+
 const authController = {
 
     homePage: (req, res) => {
@@ -77,11 +81,12 @@ const authController = {
                 bcrypt.compare(password, userFind.password)
                     .then(passwordMatch => {
                         if (passwordMatch) {
-                            res.json({ message: "successfully signed in" })
-
+                            const token = jwt.sign({ _id: userFind._id }, JWT_SECRET)
+                            const { _id, pseudo, email, bio, followers, following, pic } = userFind
+                            res.json({ token, user: { _id, pseudo, email, bio, followers, following, pic } })
                         }
                         else {
-                            return res.status(422).json({ error: "Ce compte n'exite pas !" })
+                            return res.status(422).json({ error: "Invalide email ou password !" })
                         }
                     })
                     .catch(err => {
