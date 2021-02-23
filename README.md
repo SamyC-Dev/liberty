@@ -19,7 +19,7 @@ Liberty est un projet MERN (Mongo Express React Node).
 - mongoose
 - bcrypt
 - email-validator
-
+- jsonwebtoken
 ### Base De Donnée
 - mongoDB
 
