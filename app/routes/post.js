@@ -10,6 +10,6 @@ const loginRequire = require('../middleware/loginRequire');
 // Post Routes
 router.get('/allpost', loginRequire, postController.getAllPosts);
 router.post('/createpost', loginRequire, postController.createPost);
-
+router.get('/mypost', loginRequire, postController.getMyPost);
 
 module.exports = router;
