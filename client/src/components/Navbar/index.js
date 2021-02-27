@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     return (
         <div>
-            <nav className="nav-wraper indigo">
+            <nav className="nav-wraper blue">
                 <div className="container">
                     <NavLink to="/" className="brand-logo">Liberty</NavLink>
                     <NavLink to="#" className="sidenav-trigger" data-target="mobile-links">
@@ -13,17 +13,16 @@ const Navbar = () => {
                         {/* <li><a href="sass.html"><i className="material-icons">search</i></a></li> */}
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/about">About</NavLink></li>
-                        <li><NavLink to="/signup">Se connecter</NavLink></li>
-                        <li><NavLink to="/signin" className="waves-effect waves blue btn">S'incrire</NavLink></li>
+                        <li><NavLink to="/signin">Se connecter</NavLink></li>
+                        <li><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire<i className="material-icons right">send</i></NavLink></li>
                     </ul>
                 </div>
-
             </nav>
             <ul className="sidenav" id="mobile-links">
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/signup">Se connecter</NavLink></li>
-                <li><NavLink to="/signin" className="waves-effect waves blue btn">S'incrire</NavLink></li>
+                <li><NavLink to="/signin">Se connecter</NavLink></li>
+                <li><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire</NavLink></li>
             </ul>
         </div>
 
