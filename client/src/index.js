@@ -5,7 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/index.css';
 import App from './components/App/App';
 import store from './store';
-
 import reportWebVitals from './reportWebVitals';
 
 const rootReactElement = (
