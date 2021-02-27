@@ -1,6 +1,6 @@
 // Import action
 import {
-    TEST
+    //TEST
 } from "./actions";
 
 // State initial
