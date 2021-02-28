@@ -3,21 +3,21 @@ import "./login.css";
 const Login = () => {
     return (
         <div>
-            <h4 className="center-align">Se connecter</h4>
             <div className=" valign-wrapper row login-box">
 
                 <div className="row col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
                     <form >
+                        <h4 className="center-align">Se connecter</h4>
                         <div className="row">
                             <div className="input-field col s12 ">
                                 <input id="email" type="email" className="validate" />
-                                <label htmlFor="email">Email</label>
+                                <label className="label_form" htmlFor="email">Email</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12 ">
                                 <input id="password" type="password" className="validate" />
-                                <label htmlFor="password">Password</label>
+                                <label className="label_form" htmlFor="password">Password</label>
                             </div>
                         </div>
                         <div className="card-action center-align">

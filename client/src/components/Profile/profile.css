@@ -1,0 +1,47 @@
+
+
+.profile_image{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+
+.profile_header{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.profil_header_right_item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profil_header_left_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.post_gallery_item{
+margin-bottom: 15px;
+}
+
+
+
+/* .profile_header_bio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+} */
+
+/* .profil_header_right{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+} */
