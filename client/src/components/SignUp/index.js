@@ -15,12 +15,6 @@ const SignUp = () => {
                         </div>
                         <div className="row">
                             <div className="input-field col s12 ">
-                                <input id="last_name" type="text" className="validate" />
-                                <label className="label_form" htmlFor="last_name">Bio</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12 ">
                                 <input id="email" type="email" className="validate" />
                                 <label className="label_form" htmlFor="email">Email</label>
                             </div>
