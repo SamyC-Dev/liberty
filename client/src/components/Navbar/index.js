@@ -22,7 +22,7 @@ const Navbar = () => {
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/signin">Se connecter</NavLink></li>
-                <li><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire</NavLink></li>
+                <li><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire<i className="material-icons right">send</i></NavLink></li>
             </ul>
         </div>
 

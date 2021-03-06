@@ -1,0 +1,27 @@
+.post_card{
+    width: 250px;
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_card_post img{
+    width: 100%;
+}
+
+.body_card_top {
+   display: flex;
+   align-items: center;
+}
+
+.body_card_top img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0px 5px;
+}
+
+.body_card_down{
+    margin: 0px 5px;
+}

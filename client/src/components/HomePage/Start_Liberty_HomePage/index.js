@@ -1,7 +1,9 @@
+import './Start_liberty.css';
+
 const StartLiberty = () => {
     return (
-        <div>
-            <h1>Start Liberty</h1>
+        <div className="start_liberty_homepage">
+            <h4>La Liberty commence ici ...</h4>
         </div>
     )
 };

@@ -21,8 +21,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="card-action center-align">
-                            <button className="btn waves-effect blue" type="submit" name="action">S'incrire
-                    <i className="material-icons right">send</i>
+                            <button className="btn waves-effect blue" type="submit" name="action">Se connecter
                             </button>
                         </div>
                     </form>
