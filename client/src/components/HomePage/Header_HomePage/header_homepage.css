@@ -1,0 +1,34 @@
+.Header_HomePage{
+    /* background-color:#e3f2fd ; */
+    background-image: url('https://www.soroptimistinternational.org/wp-content/uploads/2020/01/technology-background-digital-hand.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+    justify-content: space-between;
+    color: white;
+}
+
+.Header_HomePage h4{
+    text-align: center;
+}
+
+.Header_HomePage p{
+    text-align: center;
+}
+
+.button_header_homepage{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.button_header_homepage button{
+    margin: 5px 10px;
+}

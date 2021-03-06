@@ -9,7 +9,6 @@ import "./homePage.css"
 const HomePage = () => {
     return (
         <div className="homePage_container">
-            <h1>je suis home page</h1>
             <HeaderHomePage />
             <BestPosts />
             <BestAuthor />
