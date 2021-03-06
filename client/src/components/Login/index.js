@@ -20,7 +20,7 @@ const Login = () => {
                                 <label className="label_form" htmlFor="password">Password</label>
                             </div>
                         </div>
-                        <div className="card-action center-align">
+                        <div className=" center-align" style={{ marginBottom: "20px" }}>
                             <button className="btn waves-effect blue" type="submit" name="action">Se connecter
                             </button>
                         </div>

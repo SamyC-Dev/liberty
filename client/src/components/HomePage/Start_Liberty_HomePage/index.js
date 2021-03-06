@@ -7,69 +7,51 @@ const StartLiberty = () => {
             <p>Lorem ipsum, dolor sit amet consectetur.</p>
             <div className="startLiberty_container">
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
                 <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
+                    <img src="https://www.rent-my-boat-nice.fr/wp-content/uploads/2020/08/placeholder.png" alt="" />
                     <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
-                    <span className="date_start_liberty_card">il y a 2 jours</span>
-                </div>
-                <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
-                    <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
-                    <span className="date_start_liberty_card">il y a 2 jours</span>
-                </div>
-                <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
-                    <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
-                    <span className="date_start_liberty_card">il y a 2 jours</span>
-                </div>
-                <div className="startLiberty_item">
-                    <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" />
-                    <h5 className="h5_start_liberty_card">titre video</h5>
-                    <h6 className="h6_start_liberty_card">Vues: 36</h6>
+                    <h6 className="h6_start_liberty_card">Likes: 36</h6>
                     <span className="date_start_liberty_card">il y a 2 jours</span>
                 </div>
             </div>

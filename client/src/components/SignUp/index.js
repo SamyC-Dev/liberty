@@ -25,9 +25,9 @@ const SignUp = () => {
                                 <label className="label_form" htmlFor="password">Password</label>
                             </div>
                         </div>
-                        <div className="card-action center-align">
+                        <div className="center-align" style={{ marginBottom: "20px" }}>
                             <button className="btn waves-effect blue" type="submit" name="action">S'incrire
-                    <i className="material-icons right">send</i>
+                            <i className="material-icons right">send</i>
                             </button>
                         </div>
 

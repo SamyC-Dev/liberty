@@ -25,6 +25,7 @@
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
+    border-radius: 5px;
 }
 
 .h5_start_liberty_card{
