@@ -14,7 +14,7 @@ const PostCard = () => {
                 </div>
                 <div className="body_card_down">
                     <p>pseudo de fou</p>
-                    <p>Vue: 36</p>
+                    <p>Vues: 36</p>
                     <p>il y a 2 jours</p>
                 </div>
             </div>
