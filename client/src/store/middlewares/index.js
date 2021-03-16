@@ -1,8 +1,9 @@
 import { applyMiddleware } from 'redux';
 
 import loggerMW from './logger';
-// import authMW from './auth';
+import authMW from './auth';
 
 export default applyMiddleware(
     loggerMW,
+    authMW,
 );

@@ -3,7 +3,6 @@ import {
     SYNC_SIGNUP_PSEUDO,
     SYNC_SIGNUP_EMAIL,
     SYNC_SIGNUP_PASSWORD,
-    SIGNUP,
 } from "./actions";
 
 // State initial

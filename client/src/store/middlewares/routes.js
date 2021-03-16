@@ -1,0 +1,27 @@
+
+import { HOMEPAGE, DISCONNECTED } from '../actions';
+
+
+// const notyf = new Notyf({
+//     duration: 4000,
+//     position: {
+//         x: 'center',
+//         y: 'top',
+//     }
+// });
+
+export default (store) => (next) => (action) => {
+    switch (action.type) {
+        case HOMEPAGE: {
+            action.history.push('/');
+            break;
+        }
+        case DISCONNECTED: {
+            action.history.push('/');
+            // notyf.success('A bientôt ...');
+        }
+        default: {
+            next(action);
+        }
+    }
+};
