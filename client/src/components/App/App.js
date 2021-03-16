@@ -10,6 +10,7 @@ import Login from '../Login';
 import SignUp from '../SignUp';
 import About from '../About';
 import Town from '../TheTown';
+import CreatePost from '../Create_Post';
 // import Footer from '../Footer';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/signup"><SignUp /></Route>
         <Route exact path="/about"><About /></Route>
         <Route exact path="/thetown"><Town /></Route>
+        <Route exact path="/createpost"><CreatePost /></Route>
       </Switch>
       {/* <Footer /> */}
     </div>
