@@ -9,6 +9,7 @@ import Profile from '../Profile';
 import Login from '../Login';
 import SignUp from '../SignUp';
 import About from '../About';
+import Town from '../TheTown';
 // import Footer from '../Footer';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/signin"><Login /></Route>
         <Route exact path="/signup"><SignUp /></Route>
         <Route exact path="/about"><About /></Route>
+        <Route exact path="/thetown"><Town /></Route>
       </Switch>
       {/* <Footer /> */}
     </div>

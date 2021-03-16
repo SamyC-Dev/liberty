@@ -1,0 +1,29 @@
+.town_container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.town_container h2{
+    text-align: center;
+}
+
+.town_gallery{
+ display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.town_gallery_item{
+width: 300px;
+height: 200px;
+margin: 10px;
+overflow: hidden;
+flex-shrink: 0;
+}
+
+.town_gallery_item img{
+    width: 100%;
+    height: auto;
+}
