@@ -3,6 +3,7 @@ import {
     SYNC_SIGNUP_PSEUDO,
     SYNC_SIGNUP_EMAIL,
     SYNC_SIGNUP_PASSWORD,
+    RESET_LOGIN_INPUT,
 } from "./actions";
 
 // State initial
@@ -34,6 +35,14 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 signupPassword: action.password,
+            };
+        }
+        case RESET_LOGIN_INPUT: {
+            return {
+                ...state,
+                signupPseudo: "",
+                signupEmail: "",
+                signupPassword: "",
             };
         }
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Import actions
-import { SIGNUP, homePage } from '../actions';
+import { SIGNUP, homePage, resetLoginInput } from '../actions';
 
 // Import constant
 // import { API_URL } from '../../utils/constants';
@@ -49,16 +49,15 @@ export default (store) => (next) => (action) => {
                 },
             })
                 .then((response) => {
-                    if (response.data.error) { console.log(response.data.error) }
                     if (response.status === 200) {
                         console.log(response)
+                        store.dispatch(resetLoginInput());
                         store.dispatch(homePage(action.history));
-
                     }
                 })
                 .catch((error) => {
                     // notyf.error('Authentification échoué !');
-                    console.log(error);
+                    console.log(error.response.data.error);
                 });
             return;
         }
