@@ -12,6 +12,8 @@ Liberty est un projet MERN (Mongo Express React Node).
 - react ( hooks, context)
 - redux
 - react router / react router dom
+- materialize css
+- axios
 - Local Storage
 ### Back
 - node

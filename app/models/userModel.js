@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: 3,
-        maxLength: 55,
+        maxLength: 25,
         trim: true
     },
     email: {
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     bio: {
         type: String,
         default: "No Bio",
-        max: 1024,
+        max: 224,
         trim: true
     },
     pic: {

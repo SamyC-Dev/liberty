@@ -4,8 +4,6 @@ const router = express.Router();
 // Import Controllers
 const authController = require('../controllers/authController');
 
-// Middleware
-//const loginRequire = require('../middleware/loginRequire');
 
 // Auth Routes
 router.get('/', authController.homePage);

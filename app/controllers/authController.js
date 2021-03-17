@@ -25,7 +25,11 @@ const authController = {
         }
 
         if (!emailValidator.validate(email)) {
-            return res.status(422).json({ error: "L'email n'est pas un email correct" })
+            return res.status(422).json({ error: "L'email n'est pas un email valide" })
+        }
+
+        if (pseudo.length < 2) {
+            return res.status(422).json({ error: "Le pseudo doit contenir un minimum de 2 caractères Merci" })
         }
 
         if (password.length < 6) {
@@ -55,7 +59,7 @@ const authController = {
                                 //     subject:"signup success",
                                 //     html:"<h1>welcome to instagram</h1>"
                                 // })
-                                res.json({ message: "Inscription avec succés" })
+                                res.json({ message: `Inscription avec succés ;-) Bienvenue ${user.pseudo}` })
                             })
                             .catch(err => {
                                 return res.status(422).json({ error: "Ce pseudo est déjà utilisé !" })
