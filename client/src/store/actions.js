@@ -4,7 +4,6 @@ export const SYNC_SIGNUP_PASSWORD = "actions/SYNC_SIGNUP_PASSWORD";
 export const SIGNUP = "actions/SIGNUP";
 export const RESET_LOGIN_INPUT = "actions/RESET_LOGIN_INPUT";
 
-
 export const HOMEPAGE = "actions/HOMEPAGE";
 export const DISCONNECTED = "actions/DISCONNECTED";
 

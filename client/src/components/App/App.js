@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 
-import "./App.css"
+import "./App.css";
+import 'notyf/notyf.min.css';
 
 // Import components
 import Navbar from '../Navbar';

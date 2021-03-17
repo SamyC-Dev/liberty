@@ -1,10 +1,16 @@
 import axios from 'axios';
+import { Notyf } from 'notyf';
 
 // Import actions
 import { SIGNUP, homePage, resetLoginInput } from '../actions';
 
-// Import constant
-// import { API_URL } from '../../utils/constants';
+const notyf = new Notyf({
+    duration: 4000,
+    position: {
+        x: 'right',
+        y: 'top',
+    }
+});
 
 export default (store) => (next) => (action) => {
 
@@ -18,19 +24,19 @@ export default (store) => (next) => (action) => {
         case SIGNUP: {
 
             if (cleanPseudo === '' || cleanEmail === '' || cleanPassword === '') {
-                // notyf.error(`Authentification échoué ! Veuillez remplir tous les champs`);
+                notyf.error(`Authentification échoué ! Veuiller remplir tous les champs`);
                 console.log('error veuillez remplir tous les champs')
                 return false
             }
 
             if (cleanPseudo.length < 2) {
-                // notyf.error(`Authentification échoué ! Veuillez remplir tous les champs`);
+                notyf.error(`Authentification échoué ! Votre pseudo doit contenir au mois 2 caracteres`);
                 console.log('error votre pseudo doit contenir au mois 2 caracteres')
                 return false
             }
 
             if (cleanPassword.length < 6) {
-                // notyf.error(`Authentification échoué ! Veuillez remplir tous les champs`);
+                notyf.error(`Authentification échoué ! Votre mdp doit contenir au moins 6 caracteres`);
                 console.log('error votre mdp doit contenir au moins 6 caracteres')
                 return false
             }
@@ -53,10 +59,11 @@ export default (store) => (next) => (action) => {
                         console.log(response)
                         store.dispatch(resetLoginInput());
                         store.dispatch(homePage(action.history));
+                        notyf.success(response.data.message);
                     }
                 })
                 .catch((error) => {
-                    // notyf.error('Authentification échoué !');
+                    notyf.error(`Authentification échoué ! ${error.response.data.error}`);
                     console.log(error.response.data.error);
                 });
             return;
