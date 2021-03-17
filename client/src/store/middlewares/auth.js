@@ -49,6 +49,7 @@ export default (store) => (next) => (action) => {
                 },
             })
                 .then((response) => {
+                    if (response.data.error) { console.log(response.data.error) }
                     if (response.status === 200) {
                         console.log(response)
                         store.dispatch(homePage(action.history));
@@ -57,7 +58,7 @@ export default (store) => (next) => (action) => {
                 })
                 .catch((error) => {
                     // notyf.error('Authentification échoué !');
-                    console.trace(error);
+                    console.log(error);
                 });
             return;
         }
