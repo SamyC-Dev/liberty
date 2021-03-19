@@ -3,14 +3,11 @@ export const SYNC_SIGNUP_EMAIL = "actions/SYNC_SIGNUP_EMAIL";
 export const SYNC_SIGNUP_PASSWORD = "actions/SYNC_SIGNUP_PASSWORD";
 export const SIGNUP = "actions/SIGNUP";
 export const RESET_SIGNUP_INPUT = "actions/RESET_SIGNUP_INPUT";
-
 export const SYNC_SIGNIN_EMAIL = "actions/SYNC_SIGNIN_EMAIL";
 export const SYNC_SIGNIN_PASSWORD = "actions/SYNC_SIGNIN_PASSWORD";
 export const LOGIN = "actions/LOGIN";
 export const RESET_LOGIN_INPUT = "actions/RESET_LOGIN_INPUT";
-
 export const SET_USER = "actions/SET_USER";
-
 export const SIGNINPAGE = "actions/SIGNINPAGE";
 export const HOMEPAGE = "actions/HOMEPAGE";
 export const DISCONNECTED = "actions/DISCONNECTED";
@@ -36,8 +33,9 @@ export const resetLoginInput = () => ({ type: RESET_LOGIN_INPUT });
 // action set Set User
 export const setUser = (user) => ({ type: SET_USER, user });
 
+// Action Disconnected: false
+export const disconnected = (history) => ({ type: DISCONNECTED, history });
 
 // Routes Actions
 export const signInPage = (history) => ({ type: SIGNINPAGE, history });
 export const homePage = (history) => ({ type: HOMEPAGE, history });
-export const disconnected = (history) => ({ type: DISCONNECTED, history });

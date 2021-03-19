@@ -1,6 +1,15 @@
 import { NavLink } from 'react-router-dom';
 
+// import { disconnected } from '../../store/actions';
+// import { useDispatch } from 'react-redux';
+// import { useHistory } from 'react-router';
+
+
 const Navbar = () => {
+
+    // const dispatch = useDispatch();
+    // const history = useHistory();
+
     return (
         <div>
             <nav className="nav-wraper blue">
@@ -23,6 +32,9 @@ const Navbar = () => {
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/signin">Se connecter</NavLink></li>
                 <li><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire<i className="material-icons right">send</i></NavLink></li>
+                {/* <button
+                    onClick={() => dispatch(disconnected(history))}
+                >Logout</button> */}
             </ul>
         </div>
 

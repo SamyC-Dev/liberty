@@ -8,6 +8,7 @@ import {
     SYNC_SIGNIN_PASSWORD,
     RESET_LOGIN_INPUT,
     SET_USER,
+    DISCONNECTED,
 } from "./actions";
 
 // State initial
@@ -78,6 +79,16 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 user: action.user,
+            };
+        }
+
+        // Disconnected
+        case DISCONNECTED: {
+            localStorage.removeItem("jwt");
+            localStorage.removeItem("user");
+            return {
+                ...state,
+                user: {},
             };
         }
 
