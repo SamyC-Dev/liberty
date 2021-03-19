@@ -5,20 +5,18 @@ import { Notyf } from 'notyf';
 import { SIGNUP, homePage, resetLoginInput } from '../actions';
 
 const notyf = new Notyf({
-    duration: 4000,
+    duration: 5000,
     position: {
         x: 'right',
         y: 'top',
     }
 });
-
+// eslint-disable-next-line
 export default (store) => (next) => (action) => {
 
     const cleanPseudo = store.getState().signupPseudo.trim();
     const cleanEmail = store.getState().signupEmail.trim();
     const cleanPassword = store.getState().signupPassword;
-
-    console.log(cleanPseudo, cleanEmail, cleanPassword)
 
     switch (action.type) {
         case SIGNUP: {
@@ -33,6 +31,11 @@ export default (store) => (next) => (action) => {
                 notyf.error(`Authentification échoué ! Votre pseudo doit contenir au mois 2 caracteres`);
                 console.log('error votre pseudo doit contenir au mois 2 caracteres')
                 return false
+            }
+
+            if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(cleanEmail)) {
+                notyf.error(`Authentification échoué ! Email n'est pas au bon format`);
+                return
             }
 
             if (cleanPassword.length < 6) {

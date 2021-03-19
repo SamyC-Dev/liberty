@@ -10,16 +10,18 @@ import { HOMEPAGE, DISCONNECTED } from '../actions';
 //     }
 // });
 
+// eslint-disable-next-line
 export default (store) => (next) => (action) => {
     switch (action.type) {
         case HOMEPAGE: {
-            action.history.push('/');
+            action.history.push('/signin');
             break;
         }
         case DISCONNECTED: {
             action.history.push('/');
             // notyf.success('A bientôt ...');
         }
+        // eslint-disable-next-line
         default: {
             next(action);
         }
