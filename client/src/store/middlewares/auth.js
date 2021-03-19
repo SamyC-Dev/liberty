@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notyf } from 'notyf';
 
 // Import actions
-import { SIGNUP, homePage, resetLoginInput } from '../actions';
+import { SIGNUP, signInPage, resetSignUpInput } from '../actions';
 
 const notyf = new Notyf({
     duration: 5000,
@@ -60,8 +60,8 @@ export default (store) => (next) => (action) => {
                 .then((response) => {
                     if (response.status === 200) {
                         console.log(response)
-                        store.dispatch(resetLoginInput());
-                        store.dispatch(homePage(action.history));
+                        store.dispatch(resetSignUpInput());
+                        store.dispatch(signInPage(action.history));
                         notyf.success(response.data.message);
                     }
                 })

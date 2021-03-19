@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
-// Import action
+// Import actions
 import { syncSignupPseudo, syncSignupEmail, syncSignupPassword, signUp } from '../../store/actions';
 
 const SignUp = () => {

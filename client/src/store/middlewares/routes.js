@@ -1,5 +1,5 @@
 
-import { HOMEPAGE, DISCONNECTED } from '../actions';
+import { SIGNINPAGE, DISCONNECTED } from '../actions';
 
 
 // const notyf = new Notyf({
@@ -13,7 +13,7 @@ import { HOMEPAGE, DISCONNECTED } from '../actions';
 // eslint-disable-next-line
 export default (store) => (next) => (action) => {
     switch (action.type) {
-        case HOMEPAGE: {
+        case SIGNINPAGE: {
             action.history.push('/signin');
             break;
         }

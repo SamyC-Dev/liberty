@@ -3,6 +3,9 @@ import {
     SYNC_SIGNUP_PSEUDO,
     SYNC_SIGNUP_EMAIL,
     SYNC_SIGNUP_PASSWORD,
+    RESET_SIGNUP_INPUT,
+    SYNC_SIGNIN_EMAIL,
+    SYNC_SIGNIN_PASSWORD,
     RESET_LOGIN_INPUT,
 } from "./actions";
 
@@ -12,6 +15,8 @@ const initialState = {
     signupPseudo: '',
     signupEmail: '',
     signupPassword: '',
+    signinEmail: '',
+    signinPassword: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,12 +42,33 @@ const reducer = (state = initialState, action = {}) => {
                 signupPassword: action.password,
             };
         }
-        case RESET_LOGIN_INPUT: {
+        case RESET_SIGNUP_INPUT: {
             return {
                 ...state,
                 signupPseudo: "",
                 signupEmail: "",
                 signupPassword: "",
+            };
+        }
+
+        // SignIn reducer
+        case SYNC_SIGNIN_EMAIL: {
+            return {
+                ...state,
+                signinEmail: action.email,
+            };
+        }
+        case SYNC_SIGNIN_PASSWORD: {
+            return {
+                ...state,
+                signinPassword: action.password,
+            };
+        }
+        case RESET_LOGIN_INPUT: {
+            return {
+                ...state,
+                signinEmail: "",
+                signinPassword: "",
             };
         }
 
