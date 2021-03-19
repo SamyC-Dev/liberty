@@ -74,9 +74,20 @@ const authController = {
     signinAction: (req, res) => {
 
         const { email, password } = req.body
+
         if (!email || !password) {
             return res.status(422).json({ error: "Veuiller remplir email et password Merci" })
         }
+
+        if (!emailValidator.validate(email)) {
+            return res.status(422).json({ error: "L'email n'est pas un email valide" })
+        }
+
+        if (password.length < 6) {
+            return res.status(422).json({ error: "Le mot de passe doit contenir un minimum de 6 caractères Merci" })
+        }
+
+
         User.findOne({ email: email })
             .then(userFind => {
                 if (!userFind) {
