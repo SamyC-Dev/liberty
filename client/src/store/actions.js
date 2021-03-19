@@ -9,6 +9,8 @@ export const SYNC_SIGNIN_PASSWORD = "actions/SYNC_SIGNIN_PASSWORD";
 export const LOGIN = "actions/LOGIN";
 export const RESET_LOGIN_INPUT = "actions/RESET_LOGIN_INPUT";
 
+export const SET_USER = "actions/SET_USER";
+
 export const SIGNINPAGE = "actions/SIGNINPAGE";
 export const HOMEPAGE = "actions/HOMEPAGE";
 export const DISCONNECTED = "actions/DISCONNECTED";
@@ -30,6 +32,9 @@ export const login = (history) => ({ type: LOGIN, history });
 
 // Reset SignIn input
 export const resetLoginInput = () => ({ type: RESET_LOGIN_INPUT });
+
+// action set Set User
+export const setUser = (user) => ({ type: SET_USER, user });
 
 
 // Routes Actions

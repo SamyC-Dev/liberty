@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notyf } from 'notyf';
 
 // Import actions
-import { SIGNUP, signInPage, resetSignUpInput, homePage, LOGIN, resetLoginInput } from '../actions';
+import { SIGNUP, signInPage, resetSignUpInput, homePage, LOGIN, resetLoginInput, setUser } from '../actions';
 
 const notyf = new Notyf({
     duration: 5000,
@@ -105,17 +105,22 @@ export default (store) => (next) => (action) => {
             })
                 .then((response) => {
                     if (response.status === 200) {
-                        console.log(response)
+                        console.log(response);
+                        localStorage.setItem("jwt", response.data.token);
+                        localStorage.setItem("user", JSON.stringify(response.data.user));
+                        store.dispatch(setUser(response.data.user));
                         store.dispatch(resetLoginInput());
                         store.dispatch(homePage(action.history));
                         notyf.success(`Bienvenue ${response.data.user.pseudo}`);
                     }
                 })
                 .catch((error) => {
+                    store.dispatch(resetLoginInput());
                     notyf.error(`Connection échoué ! ${error.response.data.error}`);
                 });
             return;
         }
+
         default: {
             next(action);
         }

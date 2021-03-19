@@ -7,6 +7,7 @@ import {
     SYNC_SIGNIN_EMAIL,
     SYNC_SIGNIN_PASSWORD,
     RESET_LOGIN_INPUT,
+    SET_USER,
 } from "./actions";
 
 // State initial
@@ -69,6 +70,14 @@ const reducer = (state = initialState, action = {}) => {
                 ...state,
                 signinEmail: "",
                 signinPassword: "",
+            };
+        }
+
+        // User reducer
+        case SET_USER: {
+            return {
+                ...state,
+                user: action.user,
             };
         }
 
