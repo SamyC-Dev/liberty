@@ -1,5 +1,5 @@
 
-import { SIGNINPAGE, DISCONNECTED } from '../actions';
+import { SIGNINPAGE, HOMEPAGE, DISCONNECTED } from '../actions';
 
 
 // const notyf = new Notyf({
@@ -15,6 +15,10 @@ export default (store) => (next) => (action) => {
     switch (action.type) {
         case SIGNINPAGE: {
             action.history.push('/signin');
+            break;
+        }
+        case HOMEPAGE: {
+            action.history.push('/');
             break;
         }
         case DISCONNECTED: {

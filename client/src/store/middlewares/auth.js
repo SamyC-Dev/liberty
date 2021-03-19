@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notyf } from 'notyf';
 
 // Import actions
-import { SIGNUP, signInPage, resetSignUpInput } from '../actions';
+import { SIGNUP, signInPage, resetSignUpInput, homePage, LOGIN, resetLoginInput } from '../actions';
 
 const notyf = new Notyf({
     duration: 5000,
@@ -17,6 +17,9 @@ export default (store) => (next) => (action) => {
     const cleanPseudo = store.getState().signupPseudo.trim();
     const cleanEmail = store.getState().signupEmail.trim();
     const cleanPassword = store.getState().signupPassword;
+
+    const cleanSignInEmail = store.getState().signinEmail.trim();
+    const cleanSignInPassword = store.getState().signinPassword;
 
     switch (action.type) {
         case SIGNUP: {
@@ -68,6 +71,48 @@ export default (store) => (next) => (action) => {
                 .catch((error) => {
                     notyf.error(`Authentification échoué ! ${error.response.data.error}`);
                     console.log(error.response.data.error);
+                });
+            return;
+        };
+
+        case LOGIN: {
+
+            if (cleanSignInEmail === '' || cleanSignInPassword === '') {
+                notyf.error(`Connection échoué ! Veuiller remplir tous les champs`);
+                return false
+            }
+
+            if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(cleanSignInEmail)) {
+                notyf.error(`Connection échoué ! Email n'est pas au bon format`);
+                return
+            }
+
+            if (cleanSignInPassword.length < 6) {
+                notyf.error(`Connection échoué ! Votre mdp doit contenir au moins 6 caracteres`);
+                return false
+            }
+
+            axios({
+                method: 'post',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                url: '/signin',
+                data: {
+                    email: cleanSignInEmail,
+                    password: cleanSignInPassword,
+                },
+            })
+                .then((response) => {
+                    if (response.status === 200) {
+                        console.log(response)
+                        store.dispatch(resetLoginInput());
+                        store.dispatch(homePage(action.history));
+                        notyf.success(`Bienvenue ${response.data.user.pseudo}`);
+                    }
+                })
+                .catch((error) => {
+                    notyf.error(`Connection échoué ! ${error.response.data.error}`);
                 });
             return;
         }

@@ -50,7 +50,15 @@ const Login = () => {
                             </div>
                         </div>
                         <div className=" center-align" style={{ marginBottom: "20px" }}>
-                            <button className="btn waves-effect blue" type="submit" name="action">Se connecter
+                            <button
+                                className="btn waves-effect blue"
+                                type="submit"
+                                name="action"
+                                onClick={(evt) => {
+                                    evt.preventDefault();
+                                    dispatch(login(history));
+                                }}
+                            >Se connecter
                             </button>
                         </div>
                     </form>
