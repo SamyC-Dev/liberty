@@ -25,6 +25,9 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/"><HomePage /></Route>
+        <Route exact path="/signin"><Login /></Route>
+        <Route exact path="/signup"><SignUp /></Route>
+        <Route exact path="/about"><About /></Route>
         <Route
           exact
           path="/profile"
@@ -36,11 +39,28 @@ function App() {
             return <Profile />;
           }}
         ></Route>
-        <Route exact path="/signin"><Login /></Route>
-        <Route exact path="/signup"><SignUp /></Route>
-        <Route exact path="/about"><About /></Route>
-        <Route exact path="/thetown"><Town /></Route>
-        <Route exact path="/createpost"><CreatePost /></Route>
+        <Route
+          exact
+          path="/thetown"
+          render={() => {
+            if (User === '') {
+              console.log('vous devez etre connecté')
+              return <Redirect to="/" />;
+            }
+            return <Town />;
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/createpost"
+          render={() => {
+            if (User === '') {
+              console.log('vous devez etre connecté')
+              return <Redirect to="/" />;
+            }
+            return <CreatePost />;
+          }}
+        ></Route>
       </Switch>
       {/* <Footer /> */}
     </div>
