@@ -11,7 +11,17 @@ export const SET_USER = "actions/SET_USER";
 export const SIGNINPAGE = "actions/SIGNINPAGE";
 export const HOMEPAGE = "actions/HOMEPAGE";
 export const DISCONNECTED = "actions/DISCONNECTED";
+export const SYNC_CREATEPOST_TITLE = "actions/SYNC_CREATEPOST_TITLE";
+export const SYNC_CREATEPOST_MESSAGE = "actions/SYNC_CREATEPOST_MESSAGE";
+export const SYNC_CREATEPOST_IMAGE = "actions/SYNC_CREATEPOST_IMAGE";
+export const CREATE_NEW_POST = "actions/CREATE_NEW_POST";
 
+
+// Create post actions
+export const syncCreatePostTitle = (title) => ({ type: SYNC_CREATEPOST_TITLE, title });
+export const syncCreatePostMessage = (message) => ({ type: SYNC_CREATEPOST_MESSAGE, message });
+export const syncCreatePostImage = (image) => ({ type: SYNC_CREATEPOST_IMAGE, image });
+// export const CreateNewPost = (post) => ({ type: SYNC_CREATEPOST_IMAGE, post });
 
 // SignUp Actions
 export const syncSignupPseudo = (pseudo) => ({ type: SYNC_SIGNUP_PSEUDO, pseudo });

@@ -9,6 +9,9 @@ import {
     RESET_LOGIN_INPUT,
     SET_USER,
     DISCONNECTED,
+    SYNC_CREATEPOST_TITLE,
+    SYNC_CREATEPOST_MESSAGE,
+    SYNC_CREATEPOST_IMAGE,
 } from "./actions";
 
 // State initial
@@ -19,6 +22,9 @@ const initialState = {
     signupPassword: '',
     signinEmail: '',
     signinPassword: '',
+    createPostTitle: '',
+    createPostMessage: '',
+    createPostImage: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -81,6 +87,27 @@ const reducer = (state = initialState, action = {}) => {
                 user: action.user,
             };
         }
+
+        // Post reducer
+        case SYNC_CREATEPOST_TITLE: {
+            return {
+                ...state,
+                createPostTitle: action.title,
+            };
+        }
+        case SYNC_CREATEPOST_MESSAGE: {
+            return {
+                ...state,
+                createPostMessage: action.message,
+            };
+        }
+        case SYNC_CREATEPOST_IMAGE: {
+            return {
+                ...state,
+                createPostImage: action.image,
+            };
+        }
+
 
         // Disconnected
         case DISCONNECTED: {

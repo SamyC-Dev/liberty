@@ -4,6 +4,9 @@ import { Notyf } from 'notyf';
 // Import actions
 import { SIGNUP, signInPage, resetSignUpInput, homePage, LOGIN, resetLoginInput, setUser } from '../actions';
 
+import setAuthorizationToken from '../../utils/setAuthorizationToken';
+
+
 const notyf = new Notyf({
     duration: 5000,
     position: {
@@ -109,6 +112,7 @@ export default (store) => (next) => (action) => {
                         localStorage.setItem("jwt", response.data.token);
                         localStorage.setItem("user", JSON.stringify(response.data.user));
                         store.dispatch(setUser(response.data.user));
+                        setAuthorizationToken(response.data.token);
                         store.dispatch(resetLoginInput());
                         store.dispatch(homePage(action.history));
                         notyf.success(`Bienvenue ${response.data.user.pseudo}`);
