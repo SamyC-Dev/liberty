@@ -16,7 +16,7 @@ import {
 
 // State initial
 const initialState = {
-    user: {},
+    user: '',
     signupPseudo: '',
     signupEmail: '',
     signupPassword: '',

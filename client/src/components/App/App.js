@@ -1,4 +1,6 @@
-import { Route, Switch } from "react-router";
+import { Route, Switch, Redirect } from "react-router";
+import { useSelector } from 'react-redux';
+
 
 import "./App.css";
 import 'notyf/notyf.min.css';
@@ -16,13 +18,24 @@ import CreatePost from '../Create_Post';
 
 function App() {
 
+  const User = useSelector((state) => state.user);
 
   return (
     <div className="app">
       <Navbar />
       <Switch>
         <Route exact path="/"><HomePage /></Route>
-        <Route exact path="/profile"><Profile /></Route>
+        <Route
+          exact
+          path="/profile"
+          render={() => {
+            if (User === '') {
+              console.log('vous devez etre connecté')
+              return <Redirect to="/" />;
+            }
+            return <Profile />;
+          }}
+        ></Route>
         <Route exact path="/signin"><Login /></Route>
         <Route exact path="/signup"><SignUp /></Route>
         <Route exact path="/about"><About /></Route>
