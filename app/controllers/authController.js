@@ -59,7 +59,7 @@ const authController = {
                                 //     subject:"signup success",
                                 //     html:"<h1>welcome to instagram</h1>"
                                 // })
-                                res.json({ message: `Inscription avec succés ;-) Bienvenue ${user.pseudo}` })
+                                res.json({ message: `Inscription avec succés ;-) ${user.pseudo}` })
                             })
                             .catch(err => {
                                 return res.status(422).json({ error: "Ce pseudo est déjà utilisé !" })
