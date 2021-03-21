@@ -115,7 +115,8 @@ const reducer = (state = initialState, action = {}) => {
             localStorage.removeItem("user");
             return {
                 ...state,
-                user: {},
+                user: '',
+
             };
         }
 
