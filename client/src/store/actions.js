@@ -15,12 +15,19 @@ export const SYNC_CREATEPOST_TITLE = "actions/SYNC_CREATEPOST_TITLE";
 export const SYNC_CREATEPOST_MESSAGE = "actions/SYNC_CREATEPOST_MESSAGE";
 export const SYNC_CREATEPOST_IMAGE = "actions/SYNC_CREATEPOST_IMAGE";
 export const CREATE_NEW_POST = "actions/CREATE_NEW_POST";
+export const RESET_CREATE_NEW_POST_INPUT = "actions/RESET_CREATE_NEW_POST_INPUT";
+export const SET_ALL_POSTS = "actions/SET_ALL_POSTS";
+
+
+// SetAllPosts actions
+export const setAllPosts = (allPosts) => ({ type: SET_ALL_POSTS, allPosts });
 
 
 // Create post actions
 export const syncCreatePostTitle = (title) => ({ type: SYNC_CREATEPOST_TITLE, title });
 export const syncCreatePostMessage = (message) => ({ type: SYNC_CREATEPOST_MESSAGE, message });
 export const syncCreatePostImage = (image) => ({ type: SYNC_CREATEPOST_IMAGE, image });
+export const resetCreatePostInput = () => ({ type: RESET_CREATE_NEW_POST_INPUT });
 // export const CreateNewPost = (post) => ({ type: SYNC_CREATEPOST_IMAGE, post });
 
 // SignUp Actions

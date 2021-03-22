@@ -12,6 +12,8 @@ import {
     SYNC_CREATEPOST_TITLE,
     SYNC_CREATEPOST_MESSAGE,
     SYNC_CREATEPOST_IMAGE,
+    RESET_CREATE_NEW_POST_INPUT,
+    SET_ALL_POSTS,
 } from "./actions";
 
 // State initial
@@ -25,6 +27,7 @@ const initialState = {
     createPostTitle: '',
     createPostMessage: '',
     createPostImage: '',
+    allPosts: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -107,6 +110,21 @@ const reducer = (state = initialState, action = {}) => {
                 createPostImage: action.image,
             };
         }
+        case RESET_CREATE_NEW_POST_INPUT: {
+            return {
+                ...state,
+                createPostTitle: '',
+                createPostMessage: '',
+                createPostImage: '',
+            };
+        }
+        case SET_ALL_POSTS: {
+            return {
+                ...state,
+                allPosts: action.allPosts,
+            };
+        }
+
 
 
         // Disconnected
@@ -116,7 +134,7 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 user: '',
-
+                allPosts: [],
             };
         }
 

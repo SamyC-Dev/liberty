@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import { disconnected } from '../../store/actions';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -24,17 +23,15 @@ const Navbar = () => {
                     className="btn waves-effect #e91e63 pink"
                     onClick={() => dispatch(disconnected(history))}
                 >Se déconnecter</button>
-
             ]
         } else {
             return [
                 <li key='6'><NavLink to="/about">About</NavLink></li>,
                 <li key='7'><NavLink to="/signin">Se connecter</NavLink></li>,
                 <li key='8'><NavLink to="/signup" className="btn waves-effect deep-orange lighten-2">S'incrire<i className="material-icons right">send</i></NavLink></li>
-
             ]
         }
-    }
+    };
 
 
     return (

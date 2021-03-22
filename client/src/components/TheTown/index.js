@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
+import getAllPots from '../../utils/getAllPosts';
+
 import('./town.css');
 
 
 const Town = () => {
+
+    useEffect(() => { getAllPots() }, []);
+
+
     return (
         <div className="town_container">
             <h2>Le Mur</h2>

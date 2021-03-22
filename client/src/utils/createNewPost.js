@@ -2,6 +2,9 @@ import axios from "axios";
 import store from "../store/index";
 import { Notyf } from 'notyf';
 
+// Import action
+import { resetCreatePostInput } from '../store/actions';
+
 import { CLOUDINARY_API_UPLOAD } from '../utils/constants';
 
 const notyf = new Notyf({
@@ -41,7 +44,7 @@ const createNewPost = (history) => {
             })
                 .then((response) => {
                     if (response.status === 200) {
-                        console.log(response)
+                        store.dispatch(resetCreatePostInput());
                         history.push('/thetown');
                         notyf.success('Poste crée avec succés');
                     }
