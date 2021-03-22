@@ -25,5 +25,5 @@ flex-shrink: 0;
 
 .town_gallery_item img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
