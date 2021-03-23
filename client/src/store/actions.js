@@ -22,7 +22,6 @@ export const SET_ALL_POSTS = "actions/SET_ALL_POSTS";
 // SetAllPosts actions
 export const setAllPosts = (allPosts) => ({ type: SET_ALL_POSTS, allPosts });
 
-
 // Create post actions
 export const syncCreatePostTitle = (title) => ({ type: SYNC_CREATEPOST_TITLE, title });
 export const syncCreatePostMessage = (message) => ({ type: SYNC_CREATEPOST_MESSAGE, message });

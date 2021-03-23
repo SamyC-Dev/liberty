@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
 import getAllPots from '../../utils/getAllPosts';
+import TownCard from '../TownCard';
+
 
 import('./town.css');
 
@@ -13,9 +14,8 @@ const Town = () => {
     useEffect(() => { getAllPots() }, []);
 
     const AllPostsTown = AllPosts.map(post => {
-        return (<div key={post._id} className="town_gallery_item">
-            <img src={post.photo} alt="post" />
-        </div>)
+        return <TownCard key={post._id} post={post} />
+
     });
 
     return (

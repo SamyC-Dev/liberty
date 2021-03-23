@@ -23,7 +23,6 @@ export default (store) => (next) => (action) => {
         }
         case DISCONNECTED: {
             action.history.push('/');
-            // notyf.success('A bientôt ...');
         }
         // eslint-disable-next-line
         default: {

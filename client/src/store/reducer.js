@@ -129,8 +129,7 @@ const reducer = (state = initialState, action = {}) => {
 
         // Disconnected
         case DISCONNECTED: {
-            localStorage.removeItem("jwt");
-            localStorage.removeItem("user");
+            localStorage.clear()
             return {
                 ...state,
                 user: '',

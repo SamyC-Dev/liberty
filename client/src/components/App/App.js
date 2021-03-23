@@ -1,7 +1,6 @@
 import { Route, Switch, Redirect } from "react-router";
 import { useSelector } from 'react-redux';
-
-
+import { Notyf } from 'notyf';
 import "./App.css";
 import 'notyf/notyf.min.css';
 
@@ -15,6 +14,14 @@ import About from '../About';
 import Town from '../TheTown';
 import CreatePost from '../Create_Post';
 // import Footer from '../Footer';
+
+const notyf = new Notyf({
+  duration: 5000,
+  position: {
+    x: 'right',
+    y: 'top',
+  }
+});
 
 function App() {
 
@@ -33,7 +40,7 @@ function App() {
           path="/profile"
           render={() => {
             if (User === '') {
-              console.log('vous devez etre connecté')
+              notyf.error(`Vous devez etre authentifié ;-(`);
               return <Redirect to="/" />;
             }
             return <Profile />;
@@ -44,7 +51,7 @@ function App() {
           path="/thetown"
           render={() => {
             if (User === '') {
-              console.log('vous devez etre connecté')
+              notyf.error(`Vous devez etre authentifié ;-(`);
               return <Redirect to="/" />;
             }
             return <Town />;
@@ -55,7 +62,7 @@ function App() {
           path="/createpost"
           render={() => {
             if (User === '') {
-              console.log('vous devez etre connecté')
+              notyf.error(`Vous devez etre authentifié ;-(`);
               return <Redirect to="/" />;
             }
             return <CreatePost />;

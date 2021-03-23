@@ -2,6 +2,8 @@ import('./postCard.css');
 
 
 const PostCard = () => {
+
+
     return (
         <div className="post_card">
             <div className="header_card_post">
@@ -10,10 +12,10 @@ const PostCard = () => {
             <div className="body_card_post">
                 <div className="body_card_top">
                     <img src="https://lesexpertsdurecouvrement.com/wp-content/uploads/2015/11/default-avatar.jpg" alt="" className="img_profil_card" />
-                    <p>titre du postshhh hhhhh</p>
+                    <p>pseudo de fou</p>
                 </div>
                 <div className="body_card_down">
-                    <p>pseudo de fou</p>
+                    <p>titre</p>
                     <p>Likes: 36</p>
                     <p>il y a 2 jours</p>
                 </div>
