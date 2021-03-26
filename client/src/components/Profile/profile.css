@@ -16,8 +16,13 @@
 
 .profil_header_right{
     display: flex;
+    width: 40%;
     flex-direction: column;
     justify-content: center;
+    
+}
+
+.profil_header_left_item {
 }
 
 .profil_header_right_item{
@@ -43,20 +48,15 @@
     max-width: 1300px;
 }
 
-/* .my_post_card{
-width: 300px;
-height: 200px;
-margin: 10px;
-overflow: hidden;
-flex-shrink: 0;
-} 
-
-.my_post_card img{
-    width: 100%;
-    height: auto;
-} */
 
 @media screen and (max-width: 580px) {
+    .profil_header_right_item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+@media screen and (max-width: 900px) {
     .profil_header_right_item{
         display: flex;
         flex-direction: column;
