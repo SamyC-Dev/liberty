@@ -15,6 +15,12 @@ const Profile = () => {
         return <MyPostCard key={post._id} post={post} />
     });
 
+    let countTotalHeart = 0;
+    MyPosts.forEach(post => {
+        countTotalHeart = countTotalHeart + post.likes.length
+        return countTotalHeart
+    })
+
     return (
         <div className="profile_container">
             <div className="profile_header">
@@ -24,7 +30,7 @@ const Profile = () => {
                 <div className="profil_header_right">
                     <h4>{User.pseudo}</h4>
                     <div className="profil_header_right_item">
-                        <h6>25 likes</h6>
+                        <h6>{countTotalHeart} likes</h6>
                         <h6>{User.followers.length} abonnés</h6>
                         <h6>{User.following.length} abonnements</h6>
                     </div>
