@@ -10,8 +10,8 @@ import('./town.css');
 const Town = () => {
 
     const AllPosts = useSelector((state) => state.allPosts);
-    console.log("mes posts", AllPosts)
     useEffect(() => { getAllPots() }, []);
+
 
     const AllPostsTown = AllPosts.map(post => {
         return <TownCard key={post._id} post={post} />

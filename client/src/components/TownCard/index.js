@@ -1,8 +1,12 @@
+import { useSelector } from 'react-redux';
+import likePost from '../../utils/likePost';
 import('./townCard.css');
 
 
 const TownCard = (post) => {
-    const { title, photo, postedBy, likes, comments } = post.post;
+    const User_id = useSelector((state) => state.user._id);
+    const { title, photo, postedBy, likes, comments, _id } = post.post;
+
 
     return (
         <div className="town_post_card">
@@ -16,7 +20,26 @@ const TownCard = (post) => {
                 </div>
                 <div className="town_body_card_down">
                     <p>{title}</p>
-                    <p style={{ display: 'flex', alignItem: 'center' }} ><i style={{ color: 'red' }} className="material-icons">favorite</i> {likes.length}</p>
+                    <p style={{ display: 'flex', alignItem: 'center' }} >
+
+                        {likes.includes(User_id)
+                            ?
+                            <i style={{ color: 'red' }} className="material-icons">favorite</i>
+                            //  <i className="material-icons"
+                            //         onClick={()=>{unlikePost(item._id)}}
+                            //   >thumb_down</i>
+                            :
+                            <i
+                                style={{ color: 'red' }}
+                                className="material-icons"
+                                onClick={() => { likePost(_id) }}
+                            >favorite_border</i>
+                            // <i className="material-icons"
+                            // onClick={()=>{likePost(item._id)}}
+                            // >thumb_up</i>
+                        }
+                        {likes.length}
+                    </p>
                     <p style={{ display: 'flex', alignItem: 'center' }} ><i className="material-icons">comment</i> {comments.length}</p>
                     <p style={{ float: 'right' }}>il y a 2 jours</p>
                 </div>

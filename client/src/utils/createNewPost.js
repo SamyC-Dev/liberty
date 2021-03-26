@@ -55,7 +55,7 @@ const createNewPost = (history) => {
 
         })
         .catch(err => {
-            console.log('Probleme avec cloudinary')
+            notyf.error('Probleme avec cloudinary')
         })
 
 };

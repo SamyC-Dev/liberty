@@ -29,13 +29,11 @@ export default (store) => (next) => (action) => {
 
             if (cleanPseudo === '' || cleanEmail === '' || cleanPassword === '') {
                 notyf.error(`Authentification échoué ! Veuiller remplir tous les champs`);
-                console.log('error veuillez remplir tous les champs')
                 return false
             }
 
             if (cleanPseudo.length < 2) {
                 notyf.error(`Authentification échoué ! Votre pseudo doit contenir au mois 2 caracteres`);
-                console.log('error votre pseudo doit contenir au mois 2 caracteres')
                 return false
             }
 
@@ -46,7 +44,6 @@ export default (store) => (next) => (action) => {
 
             if (cleanPassword.length < 6) {
                 notyf.error(`Authentification échoué ! Votre mdp doit contenir au moins 6 caracteres`);
-                console.log('error votre mdp doit contenir au moins 6 caracteres')
                 return false
             }
 
