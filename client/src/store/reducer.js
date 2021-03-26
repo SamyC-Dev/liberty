@@ -14,6 +14,7 @@ import {
     SYNC_CREATEPOST_IMAGE,
     RESET_CREATE_NEW_POST_INPUT,
     SET_ALL_POSTS,
+    SET_MY_POSTS,
 } from "./actions";
 
 // State initial
@@ -28,6 +29,7 @@ const initialState = {
     createPostMessage: '',
     createPostImage: '',
     allPosts: [],
+    myPosts: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -124,6 +126,12 @@ const reducer = (state = initialState, action = {}) => {
                 allPosts: action.allPosts,
             };
         }
+        case SET_MY_POSTS: {
+            return {
+                ...state,
+                myPosts: action.posts,
+            };
+        }
 
 
 
@@ -134,6 +142,7 @@ const reducer = (state = initialState, action = {}) => {
                 ...state,
                 user: '',
                 allPosts: [],
+                myPosts: [],
             };
         }
 

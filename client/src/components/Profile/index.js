@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import getMyPosts from '../../utils/getMyPosts';
+import MyPostCard from '../MyPostCard';
 import './profile.css';
 
 const Profile = () => {
+
+    const MyPosts = useSelector((state) => state.myPosts);
+    useEffect(() => { getMyPosts() }, []);
+
+    const myPostsInProfile = MyPosts.map(post => {
+        return <MyPostCard key={post._id} post={post} />
+    });
+
     return (
         <div className="profile_container">
             <div className="profile_header">
@@ -22,34 +34,7 @@ const Profile = () => {
             </div>
             <h4 style={{ margin: '40px auto', textAlign: 'center' }} >Posts 25</h4>
             <div className="post_gallery">
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-                <div className="post_gallery_item">
-                    <img src="https://1.bp.blogspot.com/-wT-z-yKLDxk/W817DrPQ6jI/AAAAAAAAuCc/zA19t5t7BfQ9PFJUXNMjxy7Ygg3EBtFNgCLcBGAs/s1600/youtube-nouveau-logo-2.jpg" alt="post" />
-                </div>
-
+                {myPostsInProfile}
             </div>
         </div>
     )

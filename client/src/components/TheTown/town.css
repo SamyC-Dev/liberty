@@ -8,10 +8,10 @@
 }
 
 .town_gallery{
- display: flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1300px; 
 }
 

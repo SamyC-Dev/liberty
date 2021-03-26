@@ -17,7 +17,10 @@ export const SYNC_CREATEPOST_IMAGE = "actions/SYNC_CREATEPOST_IMAGE";
 export const CREATE_NEW_POST = "actions/CREATE_NEW_POST";
 export const RESET_CREATE_NEW_POST_INPUT = "actions/RESET_CREATE_NEW_POST_INPUT";
 export const SET_ALL_POSTS = "actions/SET_ALL_POSTS";
+export const SET_MY_POSTS = "actions/SET_MY_POSTS";
 
+// SetMyPost in my profile action
+export const setMyPosts = (posts) => ({ type: SET_MY_POSTS, posts });
 
 // SetAllPosts actions
 export const setAllPosts = (allPosts) => ({ type: SET_ALL_POSTS, allPosts });

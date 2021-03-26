@@ -43,18 +43,18 @@
     max-width: 1300px;
 }
 
-.post_gallery_item{
+/* .my_post_card{
 width: 300px;
 height: 200px;
 margin: 10px;
 overflow: hidden;
 flex-shrink: 0;
-}
+} 
 
-.post_gallery_item img{
+.my_post_card img{
     width: 100%;
     height: auto;
-}
+} */
 
 @media screen and (max-width: 580px) {
     .profil_header_right_item{
