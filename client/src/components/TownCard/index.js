@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import likePost from '../../utils/likePost';
+import unlikePosts from '../../utils/unlikePosts';
 import('./townCard.css');
 
 
@@ -24,19 +25,17 @@ const TownCard = (post) => {
 
                         {likes.includes(User_id)
                             ?
-                            <i style={{ color: 'red' }} className="material-icons">favorite</i>
-                            //  <i className="material-icons"
-                            //         onClick={()=>{unlikePost(item._id)}}
-                            //   >thumb_down</i>
+                            <i
+                                style={{ color: 'red' }}
+                                className="material-icons"
+                                onClick={() => { unlikePosts(_id) }}
+                            >favorite</i>
                             :
                             <i
                                 style={{ color: 'red' }}
                                 className="material-icons"
                                 onClick={() => { likePost(_id) }}
                             >favorite_border</i>
-                            // <i className="material-icons"
-                            // onClick={()=>{likePost(item._id)}}
-                            // >thumb_up</i>
                         }
                         {likes.length}
                     </p>

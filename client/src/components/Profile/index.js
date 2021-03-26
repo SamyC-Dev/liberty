@@ -12,7 +12,7 @@ const Profile = () => {
     useEffect(() => { getMyPosts() }, []);
 
     const myPostsInProfile = MyPosts.map(post => {
-        return <MyPostCard key={post._id} post={post} user={User} />
+        return <MyPostCard key={post._id} post={post} />
     });
 
     return (

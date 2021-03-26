@@ -14,11 +14,11 @@ const notyf = new Notyf({
 });
 
 
-const likePost = (id) => {
+const unlikePosts = (id) => {
     const allPosts = store.getState().allPosts;
     axios({
         method: 'put',
-        url: '/like',
+        url: '/unlike',
         data: {
             postId: id,
         },
@@ -35,13 +35,11 @@ const likePost = (id) => {
             })
 
             store.dispatch(setAllPosts(newData));
-            notyf.success('Poste Lické ');
 
         })
         .catch((error) => {
             notyf.error(error.response.data.error);
         });
-
 }
 
-export default likePost;
+export default unlikePosts;
