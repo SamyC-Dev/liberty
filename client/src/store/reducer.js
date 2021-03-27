@@ -15,6 +15,7 @@ import {
     RESET_CREATE_NEW_POST_INPUT,
     SET_ALL_POSTS,
     SET_MY_POSTS,
+    SET_POST_BY_ID,
 } from "./actions";
 
 // State initial
@@ -30,6 +31,7 @@ const initialState = {
     createPostImage: '',
     allPosts: [],
     myPosts: [],
+    postById: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -130,6 +132,12 @@ const reducer = (state = initialState, action = {}) => {
             return {
                 ...state,
                 myPosts: action.posts,
+            };
+        }
+        case SET_POST_BY_ID: {
+            return {
+                ...state,
+                postById: action.post,
             };
         }
 

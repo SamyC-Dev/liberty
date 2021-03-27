@@ -29,6 +29,16 @@ const postController = {
             })
     },
 
+    getPostById: (req, res) => {
+        Post.findOne({ _id: req.params.postId })
+            .populate("postedBy", "_id pseudo pic ")
+            .then((post) => {
+                res.json({ post });
+            }).catch(err => {
+                console.log(err);
+            })
+    },
+
     createPost: (req, res) => {
 
         const { title, message, photo } = req.body;

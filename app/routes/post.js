@@ -11,6 +11,7 @@ const loginRequire = require('../middleware/loginRequire');
 router.get('/allpost', loginRequire, postController.getAllPosts);
 router.post('/createpost', loginRequire, postController.createPost);
 router.get('/mypost', loginRequire, postController.getMyPost);
+router.get('/post/:postId', loginRequire, postController.getPostById);
 
 // Like Post Route
 router.put('/like', loginRequire, postController.likePost);

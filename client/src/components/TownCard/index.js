@@ -1,10 +1,13 @@
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 import likePost from '../../utils/likePost';
 import unlikePosts from '../../utils/unlikePosts';
 import('./townCard.css');
 
 
 const TownCard = (post) => {
+
+    const history = useHistory();
     const User_id = useSelector((state) => state.user._id);
     const { title, photo, postedBy, likes, comments, _id } = post.post;
 
@@ -12,7 +15,11 @@ const TownCard = (post) => {
     return (
         <div className="town_post_card">
             <div className="town_header_card_post">
-                <img src={photo} alt="logo" />
+                <img
+                    src={photo}
+                    alt="logo"
+                    onClick={() => history.push(`/post/${_id}`)}
+                />
             </div>
             <div className="town_body_card_post">
                 <div className="town_body_card_top">

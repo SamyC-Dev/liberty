@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     },
     pic: {
         type: String,
-        default: "https://res.cloudinary.com/cnq/image/upload/v1586197723/noimage_d4ipmd.png"
+        default: "https://res.cloudinary.com/libertyproject/image/upload/v1616411076/dduhuvgwyjklbiqwhuzc.jpg"
     },
     followers: [{ type: ObjectId, ref: "User" }],
     following: [{ type: ObjectId, ref: "User" }]

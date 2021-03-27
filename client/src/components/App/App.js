@@ -13,6 +13,7 @@ import SignUp from '../SignUp';
 import About from '../About';
 import Town from '../TheTown';
 import CreatePost from '../Create_Post';
+import PostById from '../PostById';
 // import Footer from '../Footer';
 
 const notyf = new Notyf({
@@ -66,6 +67,17 @@ function App() {
               return <Redirect to="/" />;
             }
             return <CreatePost />;
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/post/:postId"
+          render={() => {
+            if (User === '') {
+              notyf.error(`Vous devez etre authentifié ;-(`);
+              return <Redirect to="/" />;
+            }
+            return <PostById />;
           }}
         ></Route>
       </Switch>

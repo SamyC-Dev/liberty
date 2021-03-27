@@ -18,6 +18,11 @@ export const CREATE_NEW_POST = "actions/CREATE_NEW_POST";
 export const RESET_CREATE_NEW_POST_INPUT = "actions/RESET_CREATE_NEW_POST_INPUT";
 export const SET_ALL_POSTS = "actions/SET_ALL_POSTS";
 export const SET_MY_POSTS = "actions/SET_MY_POSTS";
+export const SET_POST_BY_ID = "actions/SET_POST_BY_ID";
+
+
+// setPostById action
+export const setPostById = (post) => ({ type: SET_POST_BY_ID, post });
 
 // SetMyPost in my profile action
 export const setMyPosts = (posts) => ({ type: SET_MY_POSTS, posts });
