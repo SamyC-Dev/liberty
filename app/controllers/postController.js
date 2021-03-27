@@ -69,13 +69,15 @@ const postController = {
             $push: { likes: req.user._id }
         }, {
             new: true
-        }).exec((err, result) => {
-            if (err) {
-                return res.status(422).json({ error: err })
-            } else {
-                res.json(result)
-            }
         })
+            .populate("postedBy", "_id pseudo pic ")
+            .exec((err, result) => {
+                if (err) {
+                    return res.status(422).json({ error: err })
+                } else {
+                    res.json(result)
+                }
+            })
     },
 
     unlikePost: (req, res) => {
@@ -83,13 +85,15 @@ const postController = {
             $pull: { likes: req.user._id }
         }, {
             new: true
-        }).exec((err, result) => {
-            if (err) {
-                return res.status(422).json({ error: err })
-            } else {
-                res.json(result)
-            }
         })
+            .populate("postedBy", "_id pseudo pic ")
+            .exec((err, result) => {
+                if (err) {
+                    return res.status(422).json({ error: err })
+                } else {
+                    res.json(result)
+                }
+            })
     }
 };
 
