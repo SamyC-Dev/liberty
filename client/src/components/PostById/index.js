@@ -27,7 +27,6 @@ const PostById = () => {
                             <div className="postById_header_user_element_right">
                                 <p>il y a 2 jours</p>
                             </div>
-
                         </div>
                         <img src={Post.photo} alt="post" />
                     </div>
@@ -43,7 +42,6 @@ const PostById = () => {
                                         className="material-icons"
                                         onClick={() => {
                                             unlikePostById(Post._id)
-                                            //document.location.reload();
                                         }}
                                     >favorite</i>
                                     :
@@ -52,7 +50,6 @@ const PostById = () => {
                                         className="material-icons"
                                         onClick={() => {
                                             likePostById(Post._id)
-                                            //document.location.reload();
                                         }}
                                     >favorite_border</i>
                                 }{Post.likes.length}

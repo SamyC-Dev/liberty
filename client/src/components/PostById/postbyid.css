@@ -1,5 +1,5 @@
 .postById_container{
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -7,11 +7,13 @@
 
 .postById_header_top{
     width: 100%;
+    height: auto;
 }
 
 .postById_header_top img{
     width: 100%;
-    height:550px;
+    height:auto;
+    max-height: 600px;
     border-radius: 5px;
 }
 

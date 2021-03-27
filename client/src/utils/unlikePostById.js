@@ -16,7 +16,6 @@ const notyf = new Notyf({
 
 const unlikePostById = (id) => {
     const allPosts = store.getState().allPosts;
-    const currentPost = store.getState().postById;
 
     axios({
         method: 'put',
@@ -36,10 +35,7 @@ const unlikePostById = (id) => {
                 }
             })
 
-            let newPost = { ...result.data }
-            newPost.postedBy = { _id: newPost.postedBy, pic: currentPost.postedBy.pic, pseudo: currentPost.postedBy.pseudo };
-
-            store.dispatch(setPostById(newPost));
+            store.dispatch(setPostById(result.data));
             store.dispatch(setAllPosts(newData));
 
         })
