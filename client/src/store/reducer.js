@@ -151,6 +151,7 @@ const reducer = (state = initialState, action = {}) => {
                 user: '',
                 allPosts: [],
                 myPosts: [],
+                postById: '',
             };
         }
 

@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux';
 import('./mypostscard.css');
 
 
 const MyPostCard = (post) => {
-    const User_id = useSelector((state) => state.user._id);
     const { title, photo, postedBy, likes, comments } = post.post;
 
     return (

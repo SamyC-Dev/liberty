@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import getPostById from '../../utils/getPostById';
-import likePost from '../../utils/likePost';
-import unlikePosts from '../../utils/unlikePosts';
+import likePostById from '../../utils/likePostById';
+import unlikePostById from '../../utils/unlikePostById';
 import('./postbyid.css');
 
 const PostById = () => {
@@ -11,8 +11,7 @@ const PostById = () => {
     const { postId } = useParams();
     const Post = useSelector((state) => state.postById);
     const User_id = useSelector((state) => state.user._id);
-    useEffect(() => { getPostById(postId) }, []);
-
+    useEffect(() => { getPostById(postId) }, [postId]);
 
     if (Post) {
         return (
@@ -22,7 +21,7 @@ const PostById = () => {
                         <h2 className='postById__title'>{Post.title}</h2>
                         <div className="postById_header_user_element">
                             <div className="postById_header_user_element_left">
-                                <img src={Post.postedBy.pic} alt="user photo" />
+                                <img src={Post.postedBy.pic} alt="user" />
                                 <p className="postById_user">{Post.postedBy.pseudo}</p>
                             </div>
                             <div className="postById_header_user_element_right">
@@ -30,7 +29,7 @@ const PostById = () => {
                             </div>
 
                         </div>
-                        <img src={Post.photo} alt="image" />
+                        <img src={Post.photo} alt="post" />
                     </div>
                     <div className="postbyId_header_body">
                         <div className="postById_likeComment_Element">
@@ -43,8 +42,8 @@ const PostById = () => {
                                         style={{ color: 'red' }}
                                         className="material-icons"
                                         onClick={() => {
-                                            unlikePosts(Post._id)
-                                            document.location.reload();
+                                            unlikePostById(Post._id)
+                                            //document.location.reload();
                                         }}
                                     >favorite</i>
                                     :
@@ -52,8 +51,8 @@ const PostById = () => {
                                         style={{ color: 'red' }}
                                         className="material-icons"
                                         onClick={() => {
-                                            likePost(Post._id)
-                                            document.location.reload();
+                                            likePostById(Post._id)
+                                            //document.location.reload();
                                         }}
                                     >favorite_border</i>
                                 }{Post.likes.length}
@@ -61,7 +60,9 @@ const PostById = () => {
                             </p>
                         </div>
                     </div>
-                    <p className="postById_message"></p>
+                    <p className="postById_message">
+                        {Post.message}
+                    </p>
                 </div>
                 <div className="postById_Comment_container">
                     <h4>Commentaires {Post.comments.length}</h4>
