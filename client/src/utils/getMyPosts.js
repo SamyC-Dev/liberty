@@ -20,7 +20,6 @@ const getMyPosts = () => {
         .then((res) => {
             if (res.status === 200) {
                 const myPosts = res.data.myposts;
-                console.log(myPosts)
                 store.dispatch(setMyPosts(myPosts));
             }
         })
