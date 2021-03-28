@@ -12,6 +12,7 @@
     width: 100%;
     height: 200px;
     border-radius: 5px 5px 0 0;
+    cursor: pointer;
 }
 
 .town_body_card_top {
@@ -24,8 +25,13 @@
     height: auto;
     border-radius: 50%;
     margin: 0px 5px;
+    cursor: pointer;
 }
 
 .town_body_card_down{
     margin: 0px 5px;
+}
+
+.town_body_card_down i{
+    cursor: pointer;
 }

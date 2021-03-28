@@ -21,6 +21,9 @@
     display: flex;
     justify-content: space-between;
 }
+.postById_likeComment_Element i{
+    cursor: pointer;
+}
 
 .postbyId_header_body{
     display: flex;
@@ -44,4 +47,5 @@ width: 80px;
 height: 80px;
 border-radius: 50%;
 margin: 0 10px 10px 0;
+cursor: pointer;
 }
