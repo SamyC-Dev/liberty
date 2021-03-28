@@ -19,4 +19,8 @@ router.put('/like', loginRequire, postController.likePost);
 // unLike Post Route
 router.put('/unlike', loginRequire, postController.unlikePost);
 
+// Comments Post Route
+router.put('/comment', loginRequire, postController.createComment);
+
+
 module.exports = router;

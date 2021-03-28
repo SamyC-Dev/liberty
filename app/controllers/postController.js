@@ -7,7 +7,7 @@ const postController = {
     getMyPost: (req, res) => {
 
         Post.find({ postedBy: req.user._id })
-            .populate("postedBy", "_id pseudo")
+            .populate("postedBy", "_id pseudo pic")
             .then(myposts => {
                 res.json({ myposts })
             })
@@ -17,10 +17,9 @@ const postController = {
     },
 
     getAllPosts: (req, res) => {
-
         Post.find()
-            .populate("postedBy", "_id pseudo")
-            .populate("comments.postedBy", "_id pseudo")
+            .populate("postedBy", "_id pseudo pic")
+            .populate("comments.postedBy", "_id pseudo pic")
             .sort('-createdAt')
             .then((posts) => {
                 res.json({ posts });
@@ -31,7 +30,8 @@ const postController = {
 
     getPostById: (req, res) => {
         Post.findOne({ _id: req.params.postId })
-            .populate("postedBy", "_id pseudo pic ")
+            .populate("postedBy", "_id pseudo pic")
+            .populate("comments.postedBy", "_id pseudo pic")
             .then((post) => {
                 res.json({ post });
             }).catch(err => {
@@ -94,7 +94,30 @@ const postController = {
                     res.json(result)
                 }
             })
-    }
+    },
+
+    createComment: (req, res) => {
+        const comment = {
+            text: req.body.text,
+            postedBy: req.user._id
+        }
+
+
+        Post.findByIdAndUpdate(req.body.postId, {
+            $push: { comments: comment }
+        }, {
+            new: true
+        })
+            .populate("comments.postedBy", "_id pseudo pic")
+            .populate("postedBy", "_id pseudo pic")
+            .exec((err, result) => {
+                if (err) {
+                    return res.status(422).json({ error: err })
+                } else {
+                    res.json(result)
+                }
+            })
+    },
 };
 
 
