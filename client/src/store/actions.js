@@ -19,7 +19,11 @@ export const RESET_CREATE_NEW_POST_INPUT = "actions/RESET_CREATE_NEW_POST_INPUT"
 export const SET_ALL_POSTS = "actions/SET_ALL_POSTS";
 export const SET_MY_POSTS = "actions/SET_MY_POSTS";
 export const SET_POST_BY_ID = "actions/SET_POST_BY_ID";
+export const SYNC_COMMENT_INPUT = "actions/SYNC_COMMENT_INPUT";
 
+
+// Sync Comment Input
+export const syncCommentInput = (comment) => ({ type: SYNC_COMMENT_INPUT, comment });
 
 // setPostById action
 export const setPostById = (post) => ({ type: SET_POST_BY_ID, post });

@@ -16,6 +16,7 @@ import {
     SET_ALL_POSTS,
     SET_MY_POSTS,
     SET_POST_BY_ID,
+    SYNC_COMMENT_INPUT,
 } from "./actions";
 
 // State initial
@@ -32,6 +33,7 @@ const initialState = {
     allPosts: [],
     myPosts: [],
     postById: '',
+    comment: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -141,6 +143,13 @@ const reducer = (state = initialState, action = {}) => {
             };
         }
 
+        // Comment reducer
+        case SYNC_COMMENT_INPUT: {
+            return {
+                ...state,
+                comment: action.comment
+            };
+        }
 
 
         // Disconnected
