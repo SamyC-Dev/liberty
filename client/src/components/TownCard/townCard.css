@@ -35,3 +35,14 @@
 .town_body_card_down i{
     cursor: pointer;
 }
+
+.town_header_card_post{
+    position: relative;
+}
+
+.town_header_card_post i{
+    color:red;
+    position: absolute;
+    top:5px;
+    right: 5px;
+}

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import likePost from '../../utils/likePost';
 import unlikePosts from '../../utils/unlikePosts';
+import deletePost from '../../utils/deletePost';
 import('./townCard.css');
 
 
@@ -20,6 +21,11 @@ const TownCard = (post) => {
                     alt="logo"
                     onClick={() => history.push(`/post/${_id}`)}
                 />
+                {(postedBy._id == User_id) && <i
+                    className="material-icons"
+                    onClick={() => deletePost(_id)}
+                >delete</i>}
+
             </div>
             <div className="town_body_card_post">
                 <div className="town_body_card_top">
