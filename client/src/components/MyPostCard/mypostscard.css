@@ -30,3 +30,16 @@
 .my_body_card_down{
     margin: 0px 5px;
 }
+
+.my_header_card_post{
+    position: relative;
+}
+
+.my_header_card_post i{
+    color:red;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    cursor: pointer;
+}
+

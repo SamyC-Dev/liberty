@@ -34,7 +34,7 @@ const makeComment = (postId) => {
         .then((result) => {
             if (result.status === 200) {
                 const newData = data.map(item => {
-                    if (item._id == result._id) {
+                    if (item._id === result._id) {
                         return result
                     } else {
                         return item
