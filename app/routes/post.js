@@ -12,6 +12,7 @@ router.get('/allpost', loginRequire, postController.getAllPosts);
 router.post('/createpost', loginRequire, postController.createPost);
 router.get('/mypost', loginRequire, postController.getMyPost);
 router.get('/post/:postId', loginRequire, postController.getPostById);
+router.delete('/deletepost/:postId', loginRequire, postController.deletePost);
 
 // Like Post Route
 router.put('/like', loginRequire, postController.likePost);
