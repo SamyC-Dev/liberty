@@ -8,6 +8,7 @@
 .postById_header_top{
     width: 100%;
     height: auto;
+    position: relative;
 }
 
 .postById_header_top img{
@@ -50,4 +51,16 @@ height: 80px;
 border-radius: 50%;
 margin: 0 10px 10px 0;
 cursor: pointer;
+}
+
+.postById_image_post{
+    position: relative;
+}
+
+.postById_header_top i {
+    color:red;
+    position: absolute;
+    top:5px;
+    right: 5px;
+    cursor: pointer;
 }

@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import getPostById from '../../utils/getPostById';
+import getMyPosts from '../../utils/getMyPosts';
+import deletePost from '../../utils/deletePost';
+
 import likePostById from '../../utils/likePostById';
 import unlikePostById from '../../utils/unlikePostById';
 import makeComment from '../../utils/makeComment';
@@ -12,6 +15,7 @@ import('./postbyid.css');
 const PostById = () => {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const { postId } = useParams();
     const Post = useSelector((state) => state.postById);
     const User_id = useSelector((state) => state.user._id);
@@ -33,7 +37,18 @@ const PostById = () => {
                                 <p>il y a 2 jours</p>
                             </div>
                         </div>
-                        <img src={Post.photo} alt="post" />
+                        <div className="postById_image_post">
+                            <img src={Post.photo} alt="post" />
+                            {(Post.postedBy._id === User_id) && <i
+                                className="material-icons"
+                                onClick={() => {
+                                    deletePost(postId)
+                                    getMyPosts()
+                                    history.push(`/profile`)
+                                }}
+                            >delete</i>}
+                        </div>
+
                     </div>
                     <div className="postbyId_header_body">
                         <div className="postById_likeComment_Element">
