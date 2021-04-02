@@ -4,7 +4,6 @@
 }
 
 .profile_header{
-    background-color: #8FCAF9;
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
@@ -38,6 +37,8 @@
     width: 100%;
     height: auto;
     padding: 5%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .post_gallery{

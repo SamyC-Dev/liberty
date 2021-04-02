@@ -13,6 +13,8 @@
     height: 200px;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
+    object-fit: cover;
+    object-position: center;
 }
 
 .my_body_card_top {
@@ -25,6 +27,8 @@
     height: auto;
     border-radius: 50%;
     margin: 0px 5px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .my_body_card_down{
