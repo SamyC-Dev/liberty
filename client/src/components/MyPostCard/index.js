@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import deletePost from '../../utils/deletePost';
 import getMyPosts from '../../utils/getMyPosts';
 
@@ -7,13 +8,18 @@ import('./mypostscard.css');
 
 const MyPostCard = (post) => {
 
+    const history = useHistory();
     const User_id = useSelector((state) => state.user._id);
     const { title, photo, postedBy, likes, comments, _id } = post.post;
 
     return (
         <div className="my_post_card">
             <div className="my_header_card_post">
-                <img src={photo} alt="logo" />
+                <img
+                    src={photo}
+                    alt="logo"
+                    onClick={() => history.push(`/post/${_id}`)}
+                />
                 {(postedBy._id === User_id) && <i
                     className="material-icons"
                     onClick={() => { deletePost(_id); getMyPosts() }}
