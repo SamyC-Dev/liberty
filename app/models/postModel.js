@@ -15,7 +15,7 @@ const postSchema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        default: "No photo",
+        default: "https://france-ameriques.org/wp-content/uploads/2016/11/Statue-of-Liberty-1.jpg",
     },
     likes: [{ type: ObjectId, ref: "User" }],
     comments: [{

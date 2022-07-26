@@ -26,37 +26,60 @@ const createNewPost = (history) => {
     data.append("upload_preset", "liberty")
     data.append("cloud_name", "libertyproject")
 
-    fetch(CLOUDINARY_API_UPLOAD, {
-        method: "post",
-        body: data
-    })
-        .then(res => res.json())
-        .then(data => {
-            const url = data.url;
-            axios({
-                method: 'post',
-                url: '/createpost',
-                data: {
-                    title: cleanPostTitle,
-                    message: cleanPostMessage,
-                    photo: url,
-                },
+    if (!cleanPostImage) {
+        axios({
+            method: 'post',
+            url: '/createpost',
+            data: {
+                title: cleanPostTitle,
+                message: cleanPostMessage,
+            },
+        })
+            .then((response) => {
+                if (response.status === 200) {
+                    store.dispatch(resetCreatePostInput());
+                    history.push('/thetown');
+                    notyf.success('Poste crée avec succés');
+                }
             })
-                .then((response) => {
-                    if (response.status === 200) {
-                        store.dispatch(resetCreatePostInput());
-                        history.push('/thetown');
-                        notyf.success('Poste crée avec succés');
-                    }
+            .catch((error) => {
+                notyf.error(error.response.data.error);
+            });
+    } else {
+        fetch(CLOUDINARY_API_UPLOAD, {
+            method: "post",
+            body: data
+        })
+            .then(res => res.json())
+            .then(data => {
+                const url = data.url;
+                axios({
+                    method: 'post',
+                    url: '/createpost',
+                    data: {
+                        title: cleanPostTitle,
+                        message: cleanPostMessage,
+                        photo: url,
+                    },
                 })
-                .catch((error) => {
-                    notyf.error(error.response.data.error);
-                });
+                    .then((response) => {
+                        if (response.status === 200) {
+                            store.dispatch(resetCreatePostInput());
+                            history.push('/thetown');
+                            notyf.success('Poste crée avec succés');
+                        }
+                    })
+                    .catch((error) => {
+                        notyf.error(error.response.data.error);
+                    });
 
-        })
-        .catch(err => {
-            notyf.error('Probleme avec cloudinary')
-        })
+            })
+            .catch(err => {
+                notyf.error('Probleme avec cloudinary')
+            })
+    }
+
+
 
 };
 
